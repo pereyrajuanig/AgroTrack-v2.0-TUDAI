@@ -1,0 +1,12 @@
+{
+  "name": "agrotrack-js",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Servidor simple para AgroTrack (ES Modules)",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
+
+

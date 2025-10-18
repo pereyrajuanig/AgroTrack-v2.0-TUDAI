@@ -1,0 +1,138 @@
+/* Estilos básicos y sencillos */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #222;
+    background: #f6f6f6;
+    padding: 16px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 16px;
+}
+
+header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #2a5e2a;
+}
+
+header p {
+    color: #555;
+    margin-top: 4px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 12px 0 16px;
+}
+
+nav a {
+    color: #2a5e2a;
+    text-decoration: none;
+    padding: 6px 10px;
+    border: 1px solid #cfe3cf;
+    background: #f3f9f3;
+}
+
+nav a:hover {
+    background: #eaf4ea;
+}
+
+main h2 {
+    font-size: 20px;
+    color: #2a5e2a;
+    margin: 16px 0 8px;
+}
+
+main p {
+    margin: 8px 0;
+}
+
+/* Formularios */
+form { 
+    background: #fafafa; 
+    border: 1px solid #e5e5e5; 
+    padding: 12px; 
+    margin: 12px 0; 
+}
+
+.form-group { 
+    margin-bottom: 12px; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 6px; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+textarea { min-height: 100px; }
+
+.btn { 
+    display: inline-block; 
+    padding: 8px 12px; 
+    background: #2a5e2a; 
+    color: #fff; 
+    border: none; 
+    text-decoration: none; 
+}
+
+.btn:hover { background: #244f24; }
+
+.btn-secondary { background: #666; }
+.btn-secondary:hover { background: #555; }
+
+.productos-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 12px; 
+}
+
+.producto-card { 
+    border: 1px solid #e5e5e5; 
+    padding: 12px; 
+    background: #fff; 
+}
+
+.consultas-container { 
+    border: 1px solid #e5e5e5; 
+    padding: 12px; 
+    background: #fafafa; 
+}
+
+footer { 
+    margin-top: 16px; 
+    padding-top: 12px; 
+    border-top: 1px solid #e5e5e5; 
+    color: #666; 
+    text-align: center; 
+}
+

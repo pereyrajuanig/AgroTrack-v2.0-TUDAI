@@ -1,0 +1,512 @@
+{
+	"info": {
+		"_postman_id": "agrotrack-collection-2024",
+		"name": "AgroTrack API Collection",
+		"description": "Colección completa de endpoints para el sistema AgroTrack - Gestión Agroindustrial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "agrotrack-exporter"
+	},
+	"item": [
+		{
+			"name": "Páginas Principales",
+			"item": [
+				{
+					"name": "GET - Página Principal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								""
+							]
+						},
+						"description": "Obtiene la página principal de AgroTrack con información general del sistema"
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/productos.html",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"productos.html"
+							]
+						},
+						"description": "Muestra la página de productos y servicios agroindustriales"
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Contacto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/contacto.html",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"contacto.html"
+							]
+						},
+						"description": "Muestra el formulario de contacto y información de la empresa"
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/login.html",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"login.html"
+							]
+						},
+						"description": "Muestra el formulario de acceso al sistema"
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Estilos CSS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/estilos.css",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"estilos.css"
+							]
+						},
+						"description": "Obtiene el archivo de estilos CSS del sistema"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para obtener las páginas principales del sistema"
+		},
+		{
+			"name": "Autenticación",
+			"item": [
+				{
+					"name": "POST - Procesar Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "usuario",
+									"value": "Juan",
+									"description": "Nombre de usuario para el login"
+								},
+								{
+									"key": "clave",
+									"value": "1234",
+									"description": "Clave de acceso del usuario"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8888/auth/recuperar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"auth",
+								"recuperar"
+							]
+						},
+						"description": "Procesa los datos de login y los muestra en una página de respuesta. Sistema de demostración que muestra las credenciales ingresadas."
+					},
+					"response": [
+						{
+							"name": "Login Exitoso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "usuario",
+											"value": "Juan"
+										},
+										{
+											"key": "clave",
+											"value": "1234"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8888/auth/recuperar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"auth",
+										"recuperar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Datos Recibidos</title>\n    <link rel=\"stylesheet\" href=\"/estilos.css\">\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Datos recibidos</h2>\n        <div class=\"data-display\">\n            <p><strong>Usuario:</strong> Juan</p>\n            <p><strong>Clave:</strong> 1234</p>\n        </div>\n        <a href=\"/\" class=\"btn\">Volver al inicio</a>\n    </div>\n</body>\n</html>"
+						}
+					]
+				}
+			],
+			"description": "Endpoints relacionados con la autenticación y acceso al sistema"
+		},
+		{
+			"name": "Gestión de Contacto",
+			"item": [
+				{
+					"name": "POST - Enviar Consulta de Contacto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nombre",
+									"value": "Juan Pérez",
+									"description": "Nombre completo del contacto"
+								},
+								{
+									"key": "email",
+									"value": "jperez@mail.com",
+									"description": "Correo electrónico del contacto"
+								},
+								{
+									"key": "mensaje",
+									"value": "Quisiera información sobre los servicios de monitoreo de cultivos para mi finca de 50 hectáreas.",
+									"description": "Mensaje o consulta del contacto"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8888/contacto/cargar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"contacto",
+								"cargar"
+							]
+						},
+						"description": "Envía una consulta de contacto que se guarda en el archivo data/consultas.txt y devuelve una página de confirmación"
+					},
+					"response": [
+						{
+							"name": "Consulta Enviada Exitosamente",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "nombre",
+											"value": "Juan Pérez"
+										},
+										{
+											"key": "email",
+											"value": "jperez@mail.com"
+										},
+										{
+											"key": "mensaje",
+											"value": "Quisiera información sobre los servicios de monitoreo de cultivos para mi finca de 50 hectáreas."
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8888/contacto/cargar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"contacto",
+										"cargar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Consulta Enviada</title>\n    <link rel=\"stylesheet\" href=\"/estilos.css\">\n</head>\n<body>\n    <div class=\"container\">\n        <h2>¡Gracias por tu consulta!</h2>\n        <p>Hemos recibido tu mensaje y te responderemos pronto.</p>\n        <div class=\"success-message\">\n            <p><strong>Nombre:</strong> Juan Pérez</p>\n            <p><strong>Email:</strong> jperez@mail.com</p>\n            <p><strong>Mensaje:</strong> Quisiera información sobre los servicios de monitoreo de cultivos para mi finca de 50 hectáreas.</p>\n        </div>\n        <a href=\"/\" class=\"btn\">Volver al inicio</a>\n        <a href=\"/contacto/listar\" class=\"btn btn-secondary\">Ver todas las consultas</a>\n    </div>\n</body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "GET - Listar Consultas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/contacto/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"contacto",
+								"listar"
+							]
+						},
+						"description": "Muestra todas las consultas de contacto guardadas en el archivo data/consultas.txt"
+					},
+					"response": [
+						{
+							"name": "Lista de Consultas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/contacto/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"contacto",
+										"listar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Consultas Recibidas</title>\n    <link rel=\"stylesheet\" href=\"/estilos.css\">\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Consultas Recibidas</h2>\n        <div class=\"consultas-container\">\n            <pre>-------------------------\nFecha: 2024-01-15 14:30:25\nNombre: Juan Pérez\nEmail: jperez@mail.com\nMensaje: Quisiera información sobre los servicios de monitoreo de cultivos para mi finca de 50 hectáreas.\n-------------------------\n\n-------------------------\nFecha: 2024-01-15 15:45:12\nNombre: María González\nEmail: maria.gonzalez@empresa.com\nMensaje: Necesito cotización para sistema de riego automático en 100 hectáreas de soja.\n-------------------------\n\n</pre>\n        </div>\n        <a href=\"/\" class=\"btn\">Volver al inicio</a>\n        <a href=\"/contacto.html\" class=\"btn btn-secondary\">Nueva consulta</a>\n    </div>\n</body>\n</html>"
+						},
+						{
+							"name": "Sin Consultas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/contacto/listar",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"contacto",
+										"listar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Consultas Recibidas</title>\n    <link rel=\"stylesheet\" href=\"/estilos.css\">\n</head>\n<body>\n    <div class=\"container\">\n        <h2>Consultas Recibidas</h2>\n        <p class=\"no-data\">Aún no hay consultas</p>\n        <a href=\"/\" class=\"btn\">Volver al inicio</a>\n        <a href=\"/contacto.html\" class=\"btn btn-secondary\">Nueva consulta</a>\n    </div>\n</body>\n</html>"
+						}
+					]
+				}
+			],
+			"description": "Endpoints para gestionar consultas de contacto y comunicación con clientes"
+		},
+		{
+			"name": "Casos de Error",
+			"item": [
+				{
+					"name": "GET - Ruta No Encontrada (404)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/ruta-inexistente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"ruta-inexistente"
+							]
+						},
+						"description": "Ejemplo de respuesta 404 cuando se accede a una ruta que no existe"
+					},
+					"response": [
+						{
+							"name": "Error 404",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/ruta-inexistente",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"ruta-inexistente"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Página no encontrada</title>\n    <link rel=\"stylesheet\" href=\"/estilos.css\">\n</head>\n<body>\n    <div class=\"container\">\n        <h1>404 - Página no encontrada</h1>\n        <p>La página que buscas no existe.</p>\n        <a href=\"/\" class=\"btn\">Volver al inicio</a>\n    </div>\n</body>\n</html>"
+						}
+					]
+				}
+			],
+			"description": "Ejemplos de respuestas de error del sistema"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Script de pre-request para la colección AgroTrack",
+					"console.log('Ejecutando request para AgroTrack...');",
+					"",
+					"// Verificar que el servidor esté ejecutándose",
+					"if (!pm.environment.get('server_url')) {",
+					"    pm.environment.set('server_url', 'http://localhost:8888');",
+					"}"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Tests básicos para la colección AgroTrack",
+					"pm.test('Status code is 200', function () {",
+					"    pm.response.to.have.status(200);",
+					"});",
+					"",
+					"pm.test('Response time is less than 1000ms', function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+					"});",
+					"",
+					"pm.test('Content-Type includes text/html', function () {",
+					"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/html');",
+					"});",
+					"",
+					"// Log de información útil",
+					"console.log('Response Status:', pm.response.status);",
+					"console.log('Response Time:', pm.response.responseTime + 'ms');",
+					"console.log('Content-Type:', pm.response.headers.get('Content-Type'));"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server_url",
+			"value": "http://localhost:8888",
+			"type": "string"
+		},
+		{
+			"key": "api_version",
+			"value": "1.0",
+			"type": "string"
+		}
+	]
+}
+
+

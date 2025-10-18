@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - AgroTrack</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AgroTrack</h1>
+            <p>Contacto</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/productos.html">Productos</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+                <li><a href="/login.html">Acceso</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>Formulario de contacto</h2>
+            <form action="/contacto/cargar" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                </div>
+
+                <p>
+                    <button type="submit" class="btn">Enviar</button>
+                    <a href="/" class="btn btn-secondary">Volver</a>
+                    <a href="/contacto/listar" class="btn btn-secondary">Ver consultas</a>
+                </p>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 AgroTrack</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+

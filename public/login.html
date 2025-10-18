@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso - AgroTrack</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AgroTrack</h1>
+            <p>Acceso</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/productos.html">Productos</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+                <li><a href="/login.html">Acceso</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>Ingresar</h2>
+            <form action="/auth/recuperar" method="POST">
+                <div class="form-group">
+                    <label for="usuario">Usuario *</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="clave">Clave *</label>
+                    <input type="password" id="clave" name="clave" required>
+                </div>
+
+                <p>
+                    <button type="submit" class="btn">Acceder</button>
+                    <a href="/" class="btn btn-secondary">Volver</a>
+                </p>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 AgroTrack</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+
