@@ -1,10 +1,27 @@
-# 🌾 AgroTrack - Sistema de Gestión Agroindustrial
+# 🌾 AgroTrack v2.0 - Sistema de Gestión Agroindustrial
 
 ## 📋 Información del Proyecto
 
 **Nombre del Estudiante:** Pereyra Juan Ignacio  
-**Materia:** Desarrollo Web II
-**Carrera:** T.U.D.A.I 
+**Materia:** Desarrollo Web II  
+**Carrera:** T.U.D.A.I  
+**Versión:** 2.0  
+**Actividad:** Obligatoria 2
+
+## 📌 Sobre esta Versión
+
+**AgroTrack v2.0** es la evolución del proyecto desarrollado en la Actividad Obligatoria 1. Esta versión incorpora los conocimientos de las Unidades 4, 5 y 6 del programa, migrando de un servidor HTTP básico con módulos nativos de Node.js a una arquitectura moderna con **Express.js** y **MySQL**.
+
+### Principales Mejoras respecto a v1.0
+
+- ✅ Migración de servidor HTTP nativo a **Express.js**
+- ✅ Implementación de **API REST** con endpoints JSON
+- ✅ Integración con **base de datos MySQL** para persistencia
+- ✅ Arquitectura **MVC** con separación de responsabilidades
+- ✅ Motor de plantillas **EJS** para renderizado seguro
+- ✅ Middleware de logging y manejo centralizado de errores
+- ✅ Validación robusta de datos con códigos de estado HTTP apropiados
+- ✅ Pool de conexiones MySQL para mejor rendimiento 
 
 ## 🚀 Instrucciones de Ejecución
 
@@ -298,16 +315,17 @@ El servidor utiliza operaciones asíncronas para:
 ## 🏗️ Arquitectura del Sistema
 
 ### Dependencias Utilizadas
-- **`express`:** Framework web para Node.js
-- **`mysql2`:** Cliente MySQL con soporte para promesas
-- **`dotenv`:** Carga variables de entorno desde archivo `.env`
+- **`express`:** Framework web para Node.js (v4.18.2)
+- **`mysql2`:** Cliente MySQL con soporte para promesas (v3.6.5)
+- **`dotenv`:** Carga variables de entorno desde archivo `.env` (v16.3.1)
+- **`ejs`:** Motor de plantillas para renderizado seguro de HTML (v3.1.10)
 - **`path`:** Manejo de rutas de archivos (nativo)
 - **`url`:** Parsing de URLs (nativo, usado implícitamente por Express)
 
 ### Estructura de Archivos
 ```
-agrotrack/
-├── app.js                 # Servidor Express principal
+AgroTrack-js/              # Proyecto v2.0
+├── app.js                 # Servidor Express principal (reemplaza server.js de v1.0)
 ├── db.js                  # Configuración de base de datos MySQL
 ├── package.json           # Dependencias del proyecto
 ├── package-lock.json      # Lock file de dependencias
@@ -316,12 +334,20 @@ agrotrack/
 ├── routes/                # Rutas de la aplicación
 │   └── contactos.js      # Rutas de la API REST (inyecta controladores)
 ├── controllers/           # Controladores (manejan peticiones HTTP)
-│   └── contactoController.js  # Controlador de contactos
+│   ├── contactoController.js  # Controlador de contactos (API REST)
+│   └── paginaController.js    # Controlador de páginas HTML
 ├── services/             # Servicios (lógica de negocio)
 │   └── contactoService.js    # Servicio de contactos (validaciones y BD)
 ├── middleware/           # Middlewares personalizados
 │   ├── logger.js         # Middleware de logging
 │   └── errorHandler.js   # Middleware de manejo de errores
+├── views/                # Plantillas EJS (motor de plantillas)
+│   ├── error404.ejs      # Página de error 404
+│   ├── error500.ejs      # Página de error 500
+│   ├── consultasListar.ejs
+│   ├── contactoEnviado.ejs
+│   ├── errorValidacion.ejs
+│   └── loginResultado.ejs
 ├── sql/                   # Scripts SQL
 │   └── schema.sql        # Script de creación de base de datos y tabla
 ├── public/                # Archivos estáticos
@@ -331,7 +357,8 @@ agrotrack/
 │   ├── login.html         # Formulario de acceso
 │   └── estilos.css        # Estilos CSS
 ├── .gitignore            # Archivos a ignorar en Git
-└── README.md             # Este archivo
+├── README.md             # Este archivo
+└── AgroTrack_Postman_Collection.json  # Colección Postman con todos los endpoints
 ```
 
 ### Arquitectura del Sistema (Patrón MVC)
@@ -491,18 +518,34 @@ curl -X POST http://localhost:8888/contacto/cargar -d "nombre=Test&email=test@te
 - `mensaje` (TEXT, NOT NULL)
 - `fecha` (DATETIME, NOT NULL, DEFAULT CURRENT_TIMESTAMP)
 
-## 🎯 Objetivos Cumplidos
+## 🎯 Objetivos Cumplidos - v2.0
 
-✅ Servidor Express con routing simplificado  
-✅ Manejo completo de rutas GET y POST  
-✅ Servicio de archivos estáticos con Express  
-✅ Procesamiento de formularios con middleware  
-✅ Almacenamiento persistente en MySQL  
-✅ Manejo robusto de errores  
-✅ Diseño web moderno y responsivo  
-✅ Documentación completa  
-✅ Colección Postman incluida  
-✅ Configuración mediante variables de entorno  
+### Requisitos de la Actividad Obligatoria 2
+
+✅ **Servidor Express** configurado y funcionando  
+✅ **API REST** completa: GET/POST `/api/contactos` con respuestas JSON  
+✅ **Endpoint de verificación**: GET `/health` retorna `{status: 'ok'}`  
+✅ **Base de datos MySQL** con tabla `contactos`  
+✅ **Validación completa** de campos y formato de email  
+✅ **Código 400** para errores de validación con mensajes descriptivos  
+✅ **Middleware de logger** para registro de peticiones  
+✅ **Middleware de errorHandler** centralizado  
+✅ **Configuración con `.env`** usando dotenv  
+✅ **Archivo `schema.sql`** en carpeta `sql/`  
+✅ **Documentación completa** en README.md  
+✅ **Colección Postman** con todos los endpoints  
+
+### Mejoras Adicionales Implementadas
+
+✅ **Arquitectura MVC** con separación en routes, controllers y services  
+✅ **Motor de plantillas EJS** para renderizado seguro de HTML  
+✅ **Pool de conexiones MySQL** para mejor rendimiento  
+✅ **Inyección de dependencias** con controladores como callbacks  
+✅ **Escape HTML** para prevenir vulnerabilidades XSS  
+✅ **Prepared statements** para prevenir inyección SQL  
+✅ **Estructura modular** escalable y mantenible  
+
 ---
 
-**Desarrollado con Express.js y MySQL**
+**AgroTrack v2.0** - Desarrollado con Express.js, MySQL y EJS  
+**Evolución de la Actividad Obligatoria 1** - Programación Web II
