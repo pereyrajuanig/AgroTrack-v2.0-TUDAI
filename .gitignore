@@ -1,9 +1,6 @@
 # Dependencias de Node.js
 node_modules/
 
-# Archivos de datos generados automáticamente
-data/consultas.txt
-
 # Variables de entorno
 .env
 .env.local

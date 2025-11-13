@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Enviada</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2>¡Gracias por tu consulta!</h2>
+        <p>Hemos recibido tu mensaje y te responderemos pronto.</p>
+        <div class="success-message">
+            <p><strong>Nombre:</strong> <%- nombre %></p>
+            <p><strong>Email:</strong> <%- email %></p>
+            <p><strong>Mensaje:</strong> <%- mensaje %></p>
+        </div>
+        <a href="/" class="btn">Volver al inicio</a>
+        <a href="/contacto/listar" class="btn btn-secondary">Ver todas las consultas</a>
+    </div>
+</body>
+</html>
+
+

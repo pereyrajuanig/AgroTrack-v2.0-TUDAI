@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas Recibidas</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Consultas Recibidas</h2>
+        <% if (consultas && consultas.length > 0) { %>
+            <div class="consultas-container">
+                <pre><%- contenido %></pre>
+            </div>
+        <% } else { %>
+            <p class="no-data">Aún no hay consultas</p>
+        <% } %>
+        <a href="/" class="btn">Volver al inicio</a>
+        <a href="/contacto.html" class="btn btn-secondary">Nueva consulta</a>
+    </div>
+</body>
+</html>
+
+
